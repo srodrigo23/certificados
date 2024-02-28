@@ -2,20 +2,21 @@ from flask import Flask
 from app.extensions import db
 from config import config
 # from app.extensions import migrate
+import os
 
-def create_app(env_values: dict):
+def create_app():
     
     app = Flask(__name__)
     # print(env_values['CONFIG_MODE'])
     # app.config.from_object(config[os.getenv("CONFIG_MODE")])
     # app.config['SQLALCHEMY_DATABASE_URI'] = env_values['DEVELOPMENT_DATABASE_URL']
-    app.config.from_object(config[env_values['CONFIG_MODE']])
+    app.config.from_object(config[os.environ.get("CONFIG_MODE")])
     
     # Initialize Flask extensions here
     db.init_app(app)
     # migrate.init_app(app, db)
 
-    # Register blueprints here
+    #Register blueprints here
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
 
