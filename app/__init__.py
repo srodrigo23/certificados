@@ -1,7 +1,7 @@
 from flask import Flask
 from app.extensions import db
 from config import config
-from app.extensions import migrate
+# from app.extensions import migrate
 
 import os
 
