@@ -13,7 +13,7 @@ def create_app():
     app.config.from_object(config[os.environ.get("CONFIG_MODE")])
     
     # Initialize Flask extensions here
-    db.init_app(app)
+    # db.init_app(app)
     # migrate.init_app(app, db)
 
     #Register blueprints here
