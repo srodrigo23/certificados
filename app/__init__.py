@@ -1,7 +1,7 @@
 from flask import Flask
 from app.extensions import db
 from config import config
-# from app.extensions import migrate
+from app.extensions import migrate
 
 import os
 
@@ -12,7 +12,7 @@ def create_app():
     
     # Initialize Flask extensions here
     db.init_app(app)
-    # migrate.init_app(app, db)
+    migrate.init_app(app, db)
 
     with app.app_context():
         db.create_all()
@@ -32,5 +32,3 @@ def create_app():
             return '<h1>Testing the Flask Application Factory Pattern</h1>'
 
         return app
-
-
