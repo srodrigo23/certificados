@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, url_for, send_from_directory
 from app.extensions import db
 from config import config
 from app.extensions import migrate
@@ -29,6 +29,16 @@ def create_app():
 
         # from app.questions import bp as questions_bp
         # app.register_blueprint(questions_bp, url_prefix='/questions')
+
+        @app.route('/favicon.ico')
+        def favicon():
+        #     return url_for('static', filename='favicon.ico')
+            return send_from_directory(
+                directory=os.path.join(app.root_path, 'static'),
+                path='static/favicon.ico', 
+                mimetype='image/vnd.microsoft.icon'
+            )
+
 
         @app.route('/test/')
         def test_page():
