@@ -8,7 +8,3 @@ from app.users import bp
 def index():
     # posts = Post.query.all()
     return render_template('users/index.html')#, posts=posts)
-
-# @bp.route('/categories/')
-# def categories():
-#     return render_template('posts/categories.html')

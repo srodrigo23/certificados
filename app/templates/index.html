@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <span class="title"><h1>{% block title %} Programa certificados{% endblock %}</h1></span>
-    <div class="content">
-        <h2>This is the main Flask blueprint</h2>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+            </div>
+        </nav>
+        <span class="title"><h1>{% block title %} Programa certificados{% endblock %}</h1></span>
+        <div class="content">
+            <h2>This is the main Flask blueprint</h2>
+            {% for value in data %}
+                <div><button>{{value}}</button> </div>
+            {% endfor %}
+            <a class="btn btn-outline-primary" href="{{ url_for('main.download', filename="qrcode1.png") }}" target="_blank"><i class="bi bi-qr-code"></i></a>
+            <a class="btn btn-outline-primary" href="{{ url_for('main.download', filename="qrcode1.png") }}" target="_blank"><i class="bi bi-filetype-pdf" alt="Certificado"></i></a>
+        </div>
     </div>
 {% endblock %}
-

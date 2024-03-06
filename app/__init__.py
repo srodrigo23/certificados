@@ -22,7 +22,7 @@ def create_app():
         
         #Register blueprints here
         from app.main import bp as main_bp
-        app.register_blueprint(main_bp)
+        app.register_blueprint(blueprint=main_bp)
 
         from app.certificates import bp as certificates_bp
         app.register_blueprint(blueprint=certificates_bp, url_prefix="/certificates")
@@ -32,16 +32,13 @@ def create_app():
 
         @app.route('/favicon.ico')
         def favicon():
-        #     return url_for('static', filename='favicon.ico')
             return send_from_directory(
                 directory=os.path.join(app.root_path, 'static'),
                 path='static/favicon.ico', 
                 mimetype='image/vnd.microsoft.icon'
             )
 
-
         @app.route('/test/')
         def test_page():
             return '<h1>Testing the Flask Application Factory Pattern</h1>'
-
         return app
