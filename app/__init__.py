@@ -30,6 +30,9 @@ def create_app():
         from app.users import bp as users_bp
         app.register_blueprint(blueprint=users_bp, url_prefix="/users")
 
+        from app.courses import bp as courses_bp
+        app.register_blueprint(blueprint=courses_bp, url_prefix="/courses")
+        
         @app.route('/favicon.ico')
         def favicon():
             return send_from_directory(
