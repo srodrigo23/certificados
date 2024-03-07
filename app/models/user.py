@@ -7,7 +7,7 @@ class User(Base):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     # user_id = db.Column(db.Integer(), unique = True)
     first_name = db.Column(db.String())
-    last_name = db.Column(db.Integer())
+    last_name = db.Column(db.String())
     cell_phone = db.Column(db.String(12))
 
     def __init__(self, first_name:str, last_name:str, cell_phone:str):

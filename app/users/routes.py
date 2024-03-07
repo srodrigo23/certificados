@@ -52,4 +52,4 @@ def index():
     for u in users_with_number:
         cont+=1
         u.number=cont
-    return render_template('users/index.html', users=users_with_number)
+    return render_template('users/index.html', users=users_with_number, title="Usuarios")

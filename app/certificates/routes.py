@@ -7,7 +7,7 @@ from app.certificates import bp
 @bp.route('/')
 def index():
     # posts = Post.query.all()
-    return render_template('certificates/index.html')#, posts=posts)
+    return render_template('certificates/index.html', title="Certificados")#, posts=posts)
 
 # @bp.route('/categories/')
 # def categories():

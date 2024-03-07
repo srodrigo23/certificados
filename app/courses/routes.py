@@ -8,4 +8,4 @@ from app.courses import bp
 @bp.route('/')
 def index():
     # posts = Post.query.all()
-    return render_template('courses/index.html')#, posts=posts)
+    return render_template('courses/index.html', title="Cursos")#, posts=posts)
