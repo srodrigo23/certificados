@@ -15,17 +15,23 @@
                         <th scope="col">Apellidos</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Celular</th>
-
+                        <th scope="col">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for user in users %}
                     <tr>
                         <th scope="row">{{user['number']}}</th>
-                        <td>{{user['regsiter _date']}}</td>
+                        <td>{{user['date_created']}}</td>
                         <td>{{user['last_name']}}</td>
                         <td>{{user['first_name']}}</td>
-                        <td>{{user['cellphone']}}</td>
+                        <td>{{user['cell_phone']}}</td>
+                        <td>
+                            <!-- href="{{ url_for('main.download', filename="qrcode1.png")}}" target="_blank" -->
+                            <a class="btn btn-outline-primary"><i class="bi bi-pen-fill"></i></a>
+                            <a class="btn btn-outline-secondary"><i class="bi bi-file-earmark-arrow-down-fill"></i></a>
+                            <a class="btn btn-outline-danger"><i class="bi bi-person-x-fill"></i></a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>

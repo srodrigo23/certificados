@@ -1,21 +1,19 @@
 
 from app.extensions import db
-class User(db.Model):
-    __tablename__ = "user"
+from app.models.base import Base
+class User(Base):
+    __tablename__ = "Users"
  
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer(),unique = True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    # user_id = db.Column(db.Integer(), unique = True)
     first_name = db.Column(db.String())
     last_name = db.Column(db.Integer())
-    age = db.Column(db.Integer())
-    # position = db.Column(db.String(80)
- 
-    def __init__(self, user_id:int, first_name:str, last_name:str, age:int):
-        self.employee_id = user_id
+    cell_phone = db.Column(db.String(12))
+
+    def __init__(self, first_name:str, last_name:str, cell_phone:str):
         self.first_name = first_name
         self.last_name = last_name
-        self.age = age
-        # self.position = position
+        self.cell_phone = cell_phone
  
     def __repr__(self):
-        return f"{self.first_name} {self.last_name}:{self.user_id}"
+        return f"{self.first_name} {self.last_name} : {self.id} : {self.date_created}"
