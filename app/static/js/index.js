@@ -11,16 +11,7 @@ for (let i = 0; i < routes.length; i++) {
     }
 }
 
-// if (route==="courses"){
-//     $(`#${route}`).toggleClass("active", true)
-//     $(`#users`).toggleClass("active", false)
-//     $(`#certificates`).toggleClass("active", false)
-// }else if(route==="certicates"){
-//     $(`#${route}`).toggleClass("active", true)
-//     $(`#users`).toggleClass("active", false)
-    //     $(`#courses`).toggleClass("active", false)
-// }else if(route==="users"){
-//     $(`#${route}`).toggleClass("active", true)
-//     $(`#courses`).toggleClass("active", false)
-//     $(`#certificates`).toggleClass("active", false)
-// }
+
+function message(){
+    console.log('this is a message')
+}
