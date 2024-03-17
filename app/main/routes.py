@@ -1,12 +1,11 @@
-from flask import render_template, current_app, send_from_directory, send_file
+from flask import render_template, current_app, send_from_directory, send_file, redirect, url_for
 from app.main import bp
 import qrcode
 import os
 
 @bp.route('/')
 def index():
-    result = ['Sergio', 'Rodrigo', 'Cardenas', 'Rivera']
-    return render_template('index.html', data=result)
+    return redirect(url_for('certificates.index'))
 
 @bp.route('/qrgenerator')
 def qr_generator()->None:

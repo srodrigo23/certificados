@@ -1,8 +1,13 @@
-from flask import render_template
+from flask import render_template, redirect, url_for
 from app.users import bp
 
 # from app.extensions import db
 # from app.models.post import Post
+
+@bp.route('/newUser/', methods=['POST'])
+def newUser(user_data):
+    print(user_data)
+    return redirect(url_for('users.index'))
 
 @bp.route('/')
 def index():
